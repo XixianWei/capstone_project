@@ -8,13 +8,14 @@ function App() {
     <header>
       <nav>
         <span className="nav_bar">
-          <div className="toggle_button" >
+          <div className="burger_menu" tabIndex={0} alt="Menu Icon">
             <MenuIcon />
           </div>
           <ul className="links">
-            <li><a href="#"> Forest</a></li>
-            <li><a href="#"> Ocean</a></li>
-            <li><a href="#"> Rainforest</a></li>
+            <li><a href="#" alt="Forest Header Link"> Forest</a></li>
+            <li><a href="#" alt="Ocean Header Link"> Ocean</a></li>
+            <li><a href="#" alt="Rainforest Header Link"> Rainforest</a></li>
+            <li><a href="#" alt="Caves Header Link"> Caves</a></li>
           </ul>
           <button className="donate_button">Add a Forest</button>
         </span>
