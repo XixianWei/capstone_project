@@ -12,7 +12,6 @@ function App() {
 
   return (
     
-
     <header>
       <nav>
         <span className="nav_bar">
