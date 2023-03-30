@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 /* HEADER */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
 
 header {
-position: relative;
-padding: 0 2rem;
+  position: relative;
+  padding: 0 2rem;
 }
 
 .nav_bar {
@@ -13,4 +21,43 @@ padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav_bar .links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #52B788;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav_bar .toggle_button {
+  color: black;
+  cursor: pointer;
+}
+
+.donate_button {
+  background-color: transparent;
+  color: black;
+  border-color: #52B788;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.donate_button:hover {
+  background-color: #52B788;
+  color: white;
 }
