@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { GoMute, GoUnmute } from "react-icons/go";
 
 const AudioPlayer = ({ isPlaying }) => {
-  const [audio] = useState(new Audio(`${process.env.PUBLIC_URL}/sounds/music.mp3`));
+  const [audio] = useState(new Audio(`${process.env.PUBLIC_URL}/sounds/forest1.wav`));
 
   useEffect(() => {
     if (isPlaying) {
