@@ -59,10 +59,10 @@ function App() {
           </div>
 
           <div className="Slider_nav">
-            <a href="#slide_1"></a>
-            <a href="#slide_1"></a>
-            <a href="#slide_1"></a>
-            <a href="#slide_1"></a>
+            <button href="#slide_1"></button>
+            <button href="#slide_2"></button>
+            <button href="#slide_3"></button>
+            <button href="#slide_4"></button>
           </div>
         </div>
       </section>
