@@ -37,11 +37,9 @@ header {
   list-style: none;
 }
 
-
-
 /* HEADER DONATE BUTTON */
 
-.donate_button {
+.add_forest{
   background-color: transparent;
   color: black;
   border-color: #52B788;
@@ -52,7 +50,53 @@ header {
   cursor: pointer;
 }
 
-.donate_button:hover {
+.add_forest:hover {
   background-color: #52B788;
   color: white;
+}
+
+/* RESPONSIVE MOBILE DISPLAY */
+
+@media(max-width: 412px){
+  .nav_bar .links,
+  .add_forest {
+    display: none;
+  }
+
+  .nav_bar .burger_menu {
+    display: block;
+  }
+
+  .burger_menu_resp {
+    display: block;
+  }
+}
+
+/* DROPDOWN MOBILE MENU */
+
+.burger_menu_resp {
+  display: flex;
+  position: absolute;
+  left: 2rem;
+  top: 60px;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.burger_menu_resp li {
+  display: flex;
+  padding: 0.7rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger_menu_resp .add_forest{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #52B788;
 }
