@@ -1,22 +1,24 @@
 import './App.css';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from "react"
+import { useState } from "react";
+import AudioPlayer from './components/AudioPlayer';
+
 
 function App() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    
+    <>
     <header>
       <nav>
         <span className="nav_bar">
 
           <div className="burger_menu" tabIndex={0} alt="Menu Icon" onClick={()=>setIsMenuOpen(!isMenuOpen)}>
             <MenuIcon />
-          </div>
-
           
+          </div>
+      
           <ul className="links">
             <li><a href="#" alt="Forest Header Link"> Forest</a></li>
             <li><a href="#" alt="Ocean Header Link"> Ocean</a></li>
@@ -40,7 +42,11 @@ function App() {
         </span>
       </nav>
     </header>
-  
+
+    <body>
+    <AudioPlayer />
+    </body>
+    </>
 
     
   );
