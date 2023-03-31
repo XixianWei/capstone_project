@@ -58,7 +58,7 @@ function App() {
             <img id="slide_4" src={YellowStone_img_4} alt="YellowStone forest image 4" />
           </div>
 
-          <div className="Slider_nav">
+          <div className="slider_nav">
             <button href="#slide_1"></button>
             <button href="#slide_2"></button>
             <button href="#slide_3"></button>
