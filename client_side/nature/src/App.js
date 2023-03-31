@@ -7,18 +7,15 @@ import PlayButton from './components/PlayButton';
 
 function App() {
 
-  const[menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen)
-  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
     <header>
       <nav>
         <span className="nav_bar">
-          <div className="burger_menu" tabIndex={0} alt="Menu Icon" >
+
+          <div className="burger_menu" tabIndex={0} alt="Menu Icon" onClick={()=>setIsMenuOpen(!isMenuOpen)}>
             <MenuIcon />
           
           </div>
@@ -31,7 +28,8 @@ function App() {
           </ul>
           <button className="add_forest">Add a Forest</button>
 
-          <div className="burger_menu_resp" onClick={toggleMenu}>
+          {isMenuOpen &&(
+          <div className="burger_menu_resp">
             <ul>
               <li><a href="#" alt="Forest Header Link"> Forest</a></li>
               <li><a href="#" alt="Ocean Header Link"> Ocean</a></li>
@@ -40,6 +38,8 @@ function App() {
               <li><button className="add_forest">Add a Forest</button></li>
             </ul>
           </div>
+          )}
+
         </span>
       </nav>
     </header>
