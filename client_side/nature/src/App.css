@@ -19,8 +19,8 @@
 @media(min-width: 412px){
   .nav_bar .burger_menu
   {display: none;}
-  
 }
+
 header {
   position: relative;
   padding: 0 2rem;

@@ -15,6 +15,8 @@ function App() {
           <div className="burger_menu" tabIndex={0} alt="Menu Icon" onClick={()=>setIsMenuOpen(!isMenuOpen)}>
             <MenuIcon />
           </div>
+
+          
           <ul className="links">
             <li><a href="#" alt="Forest Header Link"> Forest</a></li>
             <li><a href="#" alt="Ocean Header Link"> Ocean</a></li>
