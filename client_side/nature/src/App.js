@@ -1,6 +1,9 @@
 import './App.css';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from "react"
+import { useState } from "react";
+import AudioPlayer from './components/AudioPlayer';
+import PlayButton from './components/PlayButton';
+
 
 function App() {
 
@@ -11,13 +14,15 @@ function App() {
   };
 
   return (
-    
+    <>
     <header>
       <nav>
         <span className="nav_bar">
           <div className="burger_menu" tabIndex={0} alt="Menu Icon" >
             <MenuIcon />
+          
           </div>
+      
           <ul className="links">
             <li><a href="#" alt="Forest Header Link"> Forest</a></li>
             <li><a href="#" alt="Ocean Header Link"> Ocean</a></li>
@@ -38,7 +43,12 @@ function App() {
         </span>
       </nav>
     </header>
-  
+
+    <body>
+    <AudioPlayer />
+    <button className="play_button"> <PlayButton /> </button>
+    </body>
+    </>
 
     
   );
