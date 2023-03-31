@@ -1,32 +1,55 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import { GoMute, GoUnmute } from "react-icons/go";
 
-const AudioPlayer = (isMusicPlaying) => {
-    const [isPlaying , setIsPlaying] = useState(false);
-    const audio = new Audio(`${process.env.PUBLIC_URL}/sounds.public.mp3`);
+const AudioPlayer = ({ isPlaying }) => {
+  const [audio] = useState(new Audio(`${process.env.PUBLIC_URL}/sounds/music.mp3`));
 
-    useEffect(() => {
-        const handleMusic = () => {
-          if (isMusicPlaying) {
-            audio.play();
-            setIsPlaying(true);
-          } else {
-            audio.pause();
-            setIsPlaying(false);
-          }
-        };
+  useEffect(() => {
+    if (isPlaying) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }, [isPlaying, audio]);
 
-        audio.volume = 0.3;
+  return null;
+};
 
-        handleMusic();
+const PlayButton = ({ isPlaying, onClick }) => {
+  const handleClick = () => {
+    onClick(!isPlaying);
+  };
 
-        return () => {
-          audio.pause();
-          setIsPlaying(false);
-        };
-      }, [isMusicPlaying]);
-    
-      return null;
+  return (
+    <button onClick={handleClick}>
+      {isPlaying ? (
+        <>
+          <GoMute size="22" />
+          Stop Music
+        </>
+      ) : (
+        <>
+          <GoUnmute size="22" />
+          Play Music
+        </>
+      )}
+    </button>
+  );
+};
 
-}
+const MusicPlayer = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
 
-export default AudioPlayer;
+  const handleToggleMusic = (isMusicPlaying) => {
+    setIsPlaying(isMusicPlaying);
+  };
+
+  return (
+    <>
+      <AudioPlayer isPlaying={isPlaying} />
+      <PlayButton isPlaying={isPlaying} onClick={handleToggleMusic} />
+    </>
+  );
+};
+
+export default MusicPlayer;

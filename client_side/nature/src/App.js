@@ -2,7 +2,6 @@ import './App.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import AudioPlayer from './components/AudioPlayer';
-import PlayButton from './components/PlayButton';
 
 
 function App() {
@@ -46,7 +45,6 @@ function App() {
 
     <body>
     <AudioPlayer />
-    <button className="play_button"> <PlayButton /> </button>
     </body>
     </>
 
