@@ -1,25 +1,19 @@
-import { useState } from "react";
-import ForestList from "./ForestList";
-import Forest from "./Forest";
+import ForestSlider from "../components/ForestSlider";
 
-const ForestContainer = () => {
-  const [selectedForest, setSelectedForest] = useState("");
 
-  const handleSelectForest = (forestName) => {
-    setSelectedForest(forestName);
+const ForestContainer = ({ slides, onSlideChange }) => {
+  const containerStyles = {
+    width: "500px",
+    height: "280px",
+    margin: "0 auto",
   };
 
   return (
-    <div>
-      <ForestList onSelectForest={handleSelectForest} />
-      {selectedForest && (
-        <Forest
-          forestName={selectedForest}
-          onDeselectForest={() => setSelectedForest("")}
-        />
-      )}
+    <div style={containerStyles}>
+      <ForestSlider slides={slides} onSlideChange={onSlideChange}/>
     </div>
   );
 };
 
 export default ForestContainer;
+

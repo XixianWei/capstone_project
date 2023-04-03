@@ -1,55 +1,20 @@
 import { useState, useEffect } from "react";
-import { GoMute, GoUnmute } from "react-icons/go";
 
-const AudioPlayer = ({ isPlaying }) => {
-  const [audio] = useState(new Audio(`${process.env.PUBLIC_URL}/sounds/forest1.wav`));
+const AudioPlayer = ({ isPlaying, audioUrl }) => {
+  const [audio] = useState(new Audio(audioUrl));
 
   useEffect(() => {
     if (isPlaying) {
+      audio.src = audioUrl;
       audio.play();
     } else {
       audio.pause();
     }
-  }, [isPlaying, audio]);
+  }, [isPlaying, audio, audioUrl]);
 
   return null;
 };
 
-const PlayButton = ({ isPlaying, onClick }) => {
-  const handleClick = () => {
-    onClick(!isPlaying);
-  };
+export default AudioPlayer;
 
-  return (
-    <button onClick={handleClick}>
-      {isPlaying ? (
-        <>
-          <GoMute size="22" />
-          Stop Music
-        </>
-      ) : (
-        <>
-          <GoUnmute size="22" />
-          Play Music
-        </>
-      )}
-    </button>
-  );
-};
 
-const MusicPlayer = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const handleToggleMusic = (isMusicPlaying) => {
-    setIsPlaying(isMusicPlaying);
-  };
-
-  return (
-    <>
-      <AudioPlayer isPlaying={isPlaying} />
-      <PlayButton isPlaying={isPlaying} onClick={handleToggleMusic} />
-    </>
-  );
-};
-
-export default MusicPlayer;
