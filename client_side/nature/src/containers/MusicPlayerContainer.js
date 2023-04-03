@@ -1,7 +1,9 @@
 import { useState } from "react";
 import AudioDots from "../components/AudioDots";
 import AudioPlayer from "../components/AudioPlayer";
+import forestData from "../components/ForestData";
 import PlayButton from "../components/PlayButton";
+
 
 const MusicPlayerContainer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
