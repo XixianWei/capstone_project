@@ -3,6 +3,8 @@ import NavBar from './components/NavBar';
 import MusicPlayer from './containers/MusicPlayerContainer';
 import ForestContainer from './containers/ForestContainer';
 import { useState , useEffect } from "react";
+import Footer from './components/Footer';
+
 
 function App() {
   const slides = [
@@ -27,6 +29,7 @@ function App() {
       <NavBar />
       <MusicPlayer />
       <ForestContainer slides={slides} onSlideChange={handleSlideChange} />
+      <Footer/>
       <style>{`
         body {
           background-image: url(${currentSlideUrl});
