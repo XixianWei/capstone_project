@@ -1,11 +1,16 @@
-import ForestSlider from "../components/ForestSlider";
+import ForestSlider from "../components/ImageSlider";
 
 
 const ForestContainer = ({ slides, onSlideChange }) => {
   const containerStyles = {
-    width: "500px",
-    height: "280px",
-    margin: "0 auto",
+    height: "100vh",
+    width: "auto",
+    background: `url(${slides[0].url}) center center / cover no-repeat fixed`,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "0 1rem",
+    boxSizing: "border-box",
   };
 
   return (
