@@ -166,8 +166,8 @@ header {
 .play-button {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 2rem;
+  transform: translateY(-50%);
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
@@ -175,11 +175,16 @@ header {
   border: none;
   color: white;
   font-size: 3rem;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease-in-out;
+}
+
+.play-button svg {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
 }
 
 .play-button:hover {

@@ -1,4 +1,6 @@
-import { GoMute, GoUnmute } from "react-icons/go";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
+
 
 const PlayButton = ({ isPlaying, onClick }) => {
   const handleClick = () => {
@@ -7,17 +9,16 @@ const PlayButton = ({ isPlaying, onClick }) => {
 
   return (
     <button onClick={handleClick} className="play-button">
-      {isPlaying ? (
-        <>
-          <GoMute size="22" />
-          <span className="button-text">Stop Music</span>
-        </>
-      ) : (
-        <>
-          <GoUnmute size="22" />
-          <span className="button-text">Play Music</span>
-        </>
-      )}
+{isPlaying ? (
+  <>
+    <FontAwesomeIcon icon={faStop} size="2x" />
+  </>
+) : (
+  <>
+    <FontAwesomeIcon icon={faPlay} size="2x" />
+  </>
+)}
+
     </button>
   );
 };
