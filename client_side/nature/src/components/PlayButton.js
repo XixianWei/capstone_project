@@ -6,16 +6,16 @@ const PlayButton = ({ isPlaying, onClick }) => {
   };
 
   return (
-    <button onClick={handleClick}>
+    <button onClick={handleClick} className="play-button">
       {isPlaying ? (
         <>
           <GoMute size="22" />
-          Stop Music
+          <span className="button-text">Stop Music</span>
         </>
       ) : (
         <>
           <GoUnmute size="22" />
-          Play Music
+          <span className="button-text">Play Music</span>
         </>
       )}
     </button>
@@ -23,4 +23,3 @@ const PlayButton = ({ isPlaying, onClick }) => {
 };
 
 export default PlayButton;
-
