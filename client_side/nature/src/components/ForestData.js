@@ -1,4 +1,4 @@
-import { getAllForests } from '../Api';
+import { getAllForests } from "../API";
 
 const getForestDataWithMedia = async () => {
   try {
