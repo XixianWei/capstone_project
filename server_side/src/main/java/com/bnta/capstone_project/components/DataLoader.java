@@ -40,19 +40,19 @@ public class DataLoader implements ApplicationRunner {
         forestListRepository.save(forests);
 
         //Forest
-        Forest yellowStone = new Forest("Yellowstone","USA","add information", forests);
+        Forest yellowStone = new Forest("Yellowstone","USA","a vast natural reserve, it is home to a wide variety of wildlife, including grizzly bears, wolves, bison, and elk. ", forests);
         forestRepository.save(yellowStone);
 
         Forest plateau = new Forest("Plateau des Tailles", "Houffalize, BELGIUM", "Martin Dellicour\n" +
-                "info  ",forests);
+                "features a variety of hiking trails and is known for its panoramic views of the surrounding landscape. ",forests);
         forestRepository.save(plateau);
 
         Forest haguro = new Forest("Mt Haguro Forest", "Tsuruoka, JAPAN","Mat Eric Hart\n" +
-                "info   ",forests );
+                "home to a centuries-old Shinto shrine and is known for its ancient cedar trees, some of which are over 1,000 years old. ",forests );
         forestRepository.save(haguro);
 
         Forest gaio = new Forest("Mirante Gaio","Rio Grande do Sul, BRAZIL", "Felipe Giongo Krewer\n" +
-                " info", forests);
+                "home to a variety of wildlife, including capuchin monkeys and toucans. ", forests);
         forestRepository.save(gaio);
 
     }

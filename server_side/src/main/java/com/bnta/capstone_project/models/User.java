@@ -1,39 +1,7 @@
 package com.bnta.capstone_project.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
-@Entity
-@Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "donation")
-    private Long donation;
-
-    @OneToMany(mappedBy = "user")
-    @JsonIgnoreProperties({"users"})
-    private List<ForestList> forestLists;
-
-
-    public User(String name, String email, Long donation, List<ForestList> forestLists) {
-        this.name = name;
-        this.email = email;
-        this.donation = donation;
-        this.forestLists = new ArrayList<>();
-    }
-
-    public User() {
+public User() {
     }
     // getters and setters
 
