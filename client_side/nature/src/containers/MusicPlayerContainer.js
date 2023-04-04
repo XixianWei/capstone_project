@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import PlayButton from "../components/PlayButton";
 
 
-const MusicPlayerContainer = ({ currentForestData }) => {
+const MusicPlayerContainer = ({ currentForestData, onSelectedForestIdChange }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedAudioUrl, setSelectedAudioUrl] = useState(
     `${process.env.PUBLIC_URL}/assets/sounds/1.wav`
@@ -21,6 +21,7 @@ const MusicPlayerContainer = ({ currentForestData }) => {
     setSelectedAudioUrl(audioUrl);
     setIsPlaying(true);
     setSelectedForestId(forestId);
+    onSelectedForestIdChange(forestId);
   };
 
  
