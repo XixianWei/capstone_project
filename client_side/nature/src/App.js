@@ -3,15 +3,13 @@ import NavBar from './components/NavBar';
 import MusicPlayer from './containers/MusicPlayerContainer';
 import ForestContainer from './containers/ForestContainer';
 import { useState , useEffect } from "react";
-import Footer from './components/Footer';
-
 
 function App() {
   const slides = [
-    {url: 'http://localhost:3000/asessts/img/forests/yellowStone/ys_1.jpg',title:'yellow stone 1'},
-    {url: 'http://localhost:3000/asessts/img/forests/yellowStone/ys_2.jpg',title:'yellow stone 2'},
-    {url: 'http://localhost:3000/asessts/img/forests/yellowStone/ys_3.jpg',title:'yellow stone 3'},
-    // {url: 'http://localhost:3000/asessts/img/forests/yellowStone.ys_4.jpg',title:'yellow stone 4'}
+    {url: 'http://localhost:3000/asessts/img/forests/4/y_1.jpg',title:'yellowstone 1'},
+    {url: 'http://localhost:3000/asessts/img/forests/4/y_2.jpg',title:'yellowstone 2'},
+    {url: 'http://localhost:3000/asessts/img/forests/4/y_3.jpg',title:'yellowstone 3'},
+    {url: 'http://localhost:3000/asessts/img/forests/4.y_4.jpg',title:'yellowstone 4'}
   ];
 
   const [currentSlideUrl, setCurrentSlideUrl] = useState(slides[0].url);
@@ -29,7 +27,6 @@ function App() {
       <NavBar />
       <MusicPlayer />
       <ForestContainer slides={slides} onSlideChange={handleSlideChange} />
-      <Footer/>
       <style>{`
         body {
           background-image: url(${currentSlideUrl});
