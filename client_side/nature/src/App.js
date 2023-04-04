@@ -4,18 +4,9 @@ import MusicPlayer from './containers/MusicPlayerContainer';
 import ForestContainer from './containers/ForestContainer';
 import { useState , useEffect } from "react";
 import getForestDataWithMedia from './components/ForestData';
-import Footer from './components/Footer';
+
 
 function App() {
-  const slides = [
-    {url: 'http://localhost:3000/assets/img/forests/4/y_1.jpg',title:'yellowstone 1'},
-    {url: 'http://localhost:3000/assets/img/forests/4/y_2.jpg',title:'yellowstone 2'},
-    {url: 'http://localhost:3000/assets/img/forests/4/y_3.jpg',title:'yellowstone 3'},
-    {url: 'http://localhost:3000/assets/img/forests/4/y_4.jpg',title:'yellowstone 4'}
-  ];
-
-  
-
   const [currentForestData, setCurrentForestData] = useState([]);
 
 useEffect(() => {
@@ -26,11 +17,15 @@ useEffect(() => {
   fetchData();
 }, []);
 
-  const [currentSlideUrl, setCurrentSlideUrl] = useState(slides[0].url);
+const [currentSlideUrl, setCurrentSlideUrl] = useState(
+  currentForestData.length > 0
+    ? currentForestData.find((forest) => forest.id === 1).images[0].url
+    : ""
+);
 
-  const handleSlideChange = (newIndex) => {
-    setCurrentSlideUrl(slides[newIndex].url);
-  }
+const handleSlideChange = (newIndex) => {
+  setCurrentSlideUrl(currentForestData.find((forest) => forest.id === 1).images[newIndex].url);
+};
 
   useEffect(() => {
     document.body.style.backgroundImage = `url(${currentSlideUrl})`;
@@ -40,7 +35,10 @@ useEffect(() => {
     <>
       <NavBar />
       <MusicPlayer currentForestData={currentForestData}/>
-      <ForestContainer slides={slides} onSlideChange={handleSlideChange} />
+      <ForestContainer
+        slides={currentForestData.find((forest) => forest.id === 1)?.images || []}
+        onSlideChange={handleSlideChange}
+      />
       <style>{`
         body {
           background-image: url(${currentSlideUrl});

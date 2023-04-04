@@ -14,7 +14,7 @@ const ForestSlider = ({ slides , onSlideChange }) => {
     borderRadius: "10px",
     backgroundImage: "center",
     backgroundSize: "cover",
-    backgroundImage: `url(${slides[currentIndex].url})`,
+    backgroundImage: slides.length > 0 ? `url(${slides[currentIndex].url})` : "",
   };
 
   const leftArrowStyles = {
