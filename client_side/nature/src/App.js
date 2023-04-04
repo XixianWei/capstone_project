@@ -4,6 +4,7 @@ import MusicPlayer from './containers/MusicPlayerContainer';
 import ForestContainer from './containers/ForestContainer';
 import { useState , useEffect } from "react";
 import getForestDataWithMedia from './components/ForestData';
+import Footer from './components/Footer';
 
 function App() {
   const slides = [
@@ -12,6 +13,8 @@ function App() {
     {url: 'http://localhost:3000/assets/img/forests/4/y_3.jpg',title:'yellowstone 3'},
     {url: 'http://localhost:3000/assets/img/forests/4/y_4.jpg',title:'yellowstone 4'}
   ];
+
+  
 
   const [currentForestData, setCurrentForestData] = useState([]);
 

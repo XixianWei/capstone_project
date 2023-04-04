@@ -1,31 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { getAllForests } from "../Api";
 
 
-const Footer = () => {
-  const [forests, setForests] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getAllForests();
-      console.log(data);
-      setForests(data);
-    };
-    fetchData();
-  }, []);
+const Footer = ( { currentForestData, selectedForestId } ) => {
+  const selectedForest = currentForestData.find((forest) => forest.id === selectedForestId) || currentForestData.find((forest) => forest.id === 1);
 
   return (
     <>
     <footer>
-      <ul>
-        {forests.map((forest) => (
-          <li key={forest.id}>
-            <h3>{forest.name}</h3>
-            <p>Location: {forest.location}</p>
-            <p>Information: {forest.information}</p>
-          </li>
-        ))}
-      </ul>
+      {selectedForest ? (
+        <div>
+          <h2>{selectedForest.name} | {selectedForest.location}</h2>
+          <h2>Information: {selectedForest.information}</h2>
+        </div>) : (
+          <p>Select a forest</p>
+        )
+      }
     </footer>
     </>
   );
