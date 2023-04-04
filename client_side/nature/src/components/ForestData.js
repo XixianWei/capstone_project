@@ -19,22 +19,22 @@ const getForestDataWithMedia = async () => {
 
 const getImages = (id) => {
   switch (id) {
-    case 'gaio':
+    case 1:
       return [
         { url: 'http://localhost:3000/assets/img/forests/1/g_1.jpg', title: 'gaio 1' },
         { url: 'http://localhost:3000/assets/img/forests/1/g_2.jpg', title: 'gaio 2' },
       ];
-    case 'haguro':
+    case 2:
       return [
         { url: 'http://localhost:3000/assets/img/forests/2/h_1.jpg', title: 'haguro 1' },
         { url: 'http://localhost:3000/assets/img/forests/2/h_2.jpg', title: 'haguro 2' },
       ];
-    case 'plateau':
+    case 3:
       return [
         { url: 'http://localhost:3000/assets/img/forests/3/p_1.jpg', title: 'plateau 1' },
         { url: 'http://localhost:3000/assets/img/forests/3/p_2.jpg', title: 'plateau 2' },
       ];
-    case 'yellowStone':
+    case 4:
       return [
         { url: 'http://localhost:3000/assets/img/forests/4/y_1.jpg', title: 'yellowstone 1' },
         { url: 'http://localhost:3000/assets/img/forests/4/y_2.jpg', title: 'yellowstone 2' },
@@ -48,14 +48,14 @@ const getImages = (id) => {
 
 const getSounds = (id) => {
   switch (id) {
-    case 'gaio':
-      return [`${process.env.PUBLIC_URL}/assets/sounds/gaio.wav`];
-    case 'haguro':
-      return [`${process.env.PUBLIC_URL}/assets/sounds/haguro.mp3`];
-    case 'plateau':
-      return [`${process.env.PUBLIC_URL}/assets/sounds/plateau.mp3`];
-    case 'yellowStone':
-      return [`${process.env.PUBLIC_URL}/assets/sounds/yellowStone.wav`];
+    case 1:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/1.wav`];
+    case 2:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/2.mp3`];
+    case 3:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/3.mp3`];
+    case 4:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/4.wav`];
     default:
       return [];
   }

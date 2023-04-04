@@ -3,14 +3,25 @@ import NavBar from './components/NavBar';
 import MusicPlayer from './containers/MusicPlayerContainer';
 import ForestContainer from './containers/ForestContainer';
 import { useState , useEffect } from "react";
+import getForestDataWithMedia from './components/ForestData';
 
 function App() {
   const slides = [
-    {url: 'http://localhost:3000/asessts/img/forests/4/y_1.jpg',title:'yellowstone 1'},
-    {url: 'http://localhost:3000/asessts/img/forests/4/y_2.jpg',title:'yellowstone 2'},
-    {url: 'http://localhost:3000/asessts/img/forests/4/y_3.jpg',title:'yellowstone 3'},
-    {url: 'http://localhost:3000/asessts/img/forests/4.y_4.jpg',title:'yellowstone 4'}
+    {url: 'http://localhost:3000/assets/img/forests/4/y_1.jpg',title:'yellowstone 1'},
+    {url: 'http://localhost:3000/assets/img/forests/4/y_2.jpg',title:'yellowstone 2'},
+    {url: 'http://localhost:3000/assets/img/forests/4/y_3.jpg',title:'yellowstone 3'},
+    {url: 'http://localhost:3000/assets/img/forests/4/y_4.jpg',title:'yellowstone 4'}
   ];
+
+  const [currentForestData, setCurrentForestData] = useState([]);
+
+useEffect(() => {
+  const fetchData = async () => {
+    const data = await getForestDataWithMedia();
+    setCurrentForestData(data);
+  };
+  fetchData();
+}, []);
 
   const [currentSlideUrl, setCurrentSlideUrl] = useState(slides[0].url);
 
@@ -25,7 +36,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <MusicPlayer />
+      <MusicPlayer currentForestData={currentForestData}/>
       <ForestContainer slides={slides} onSlideChange={handleSlideChange} />
       <style>{`
         body {

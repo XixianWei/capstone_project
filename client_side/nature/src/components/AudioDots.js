@@ -1,13 +1,13 @@
-const AudioDots = ({ audioUrls, onDotClick }) => {
+const AudioDots = ({ currentForestData, onDotClick }) => {
   return (
     <div className="audio-dots">
-      {audioUrls.map((url, index) => (
-        <span key={index} onClick={() => onDotClick(url)}>◯</span>
+      {currentForestData.map((forest, index) => (
+        <span key={index} onClick={() => onDotClick(forest.sounds[0])}>
+          ◯
+        </span>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default AudioDots;
-
-

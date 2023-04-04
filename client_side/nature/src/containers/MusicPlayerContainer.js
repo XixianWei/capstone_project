@@ -3,10 +3,10 @@ import AudioDots from "../components/AudioDots";
 import AudioPlayer from "../components/AudioPlayer";
 import PlayButton from "../components/PlayButton";
 
-const MusicPlayerContainer = () => {
+const MusicPlayerContainer = ({ currentForestData }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentAudioUrl, setCurrentAudioUrl] = useState(
-    `${process.env.PUBLIC_URL}/asessts/sounds/gaio.wav`
+  const [selectedAudioUrl, setSelectedAudioUrl] = useState(
+    `${process.env.PUBLIC_URL}/assets/sounds/1.wav`
   );
 
   const handleToggleMusic = (isMusicPlaying) => {
@@ -14,24 +14,18 @@ const MusicPlayerContainer = () => {
   };
 
   const handleDotClick = (audioUrl) => {
-    setCurrentAudioUrl(audioUrl);
+    console.log(currentForestData);
+    setSelectedAudioUrl(audioUrl);
     setIsPlaying(true);
   };
 
   return (
     <>
-      <AudioPlayer isPlaying={isPlaying} audioUrl={currentAudioUrl}/>
+      <AudioPlayer isPlaying={isPlaying} audioUrl={selectedAudioUrl} />
       <PlayButton isPlaying={isPlaying} onClick={handleToggleMusic} />
-      <AudioDots audioUrls={[
-        `${process.env.PUBLIC_URL}/asessts/sounds/1.wav`,
-        `${process.env.PUBLIC_URL}/asessts/sounds/2.mp3`,
-        `${process.env.PUBLIC_URL}/asessts/sounds/3.mp3`,
-        `${process.env.PUBLIC_URL}/asessts/sounds/4.wav`
-      ]} onDotClick={handleDotClick} />
+      <AudioDots currentForestData={currentForestData} onDotClick={handleDotClick} />
     </>
   );
 };
 
 export default MusicPlayerContainer;
-
-
