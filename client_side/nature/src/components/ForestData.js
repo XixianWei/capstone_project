@@ -23,16 +23,23 @@ const getImages = (id) => {
       return [
         { url: 'http://localhost:3000/assets/img/forests/1/g_1.jpg', title: 'gaio 1' },
         { url: 'http://localhost:3000/assets/img/forests/1/g_2.jpg', title: 'gaio 2' },
+        { url: 'http://localhost:3000/assets/img/forests/1/g_3.jpg', title: 'gaio 3' },
+        { url: 'http://localhost:3000/assets/img/forests/1/g_4.jpg', title: 'gaio 4' },
       ];
     case 2:
       return [
         { url: 'http://localhost:3000/assets/img/forests/2/h_1.jpg', title: 'haguro 1' },
         { url: 'http://localhost:3000/assets/img/forests/2/h_2.jpg', title: 'haguro 2' },
+        { url: 'http://localhost:3000/assets/img/forests/2/h_3.jpg', title: 'haguro 3' },
+        { url: 'http://localhost:3000/assets/img/forests/2/h_4.jpg', title: 'haguro 4' },
       ];
     case 3:
       return [
         { url: 'http://localhost:3000/assets/img/forests/3/p_1.jpg', title: 'plateau 1' },
         { url: 'http://localhost:3000/assets/img/forests/3/p_2.jpg', title: 'plateau 2' },
+        { url: 'http://localhost:3000/assets/img/forests/3/p_3.jpg', title: 'plateau 3' },
+        { url: 'http://localhost:3000/assets/img/forests/3/p_4.jpg', title: 'plateau 4' },
+        
       ];
     case 4:
       return [
