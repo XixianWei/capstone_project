@@ -30,6 +30,7 @@ const leftArrowStyles = {
   cursor: "pointer",
 };
 
+
 const sliderStyles = {
   position: "relative",
   height: "100%",

@@ -4,6 +4,8 @@ import MusicPlayer from './Containers/MusicPlayerContainer';
 import ForestContainer from './Containers/ForestContainer';
 import ImageSlider from './components/ImageSlider.js';
 import { useState , useEffect } from "react";
+import Card from './components/Card'
+
 
 function App() {
   const slides = [
@@ -24,11 +26,12 @@ function App() {
 
   return (
     <>
-      <NavBar />
       <MusicPlayer />
       <div style={containerStyles}>
         <ImageSlider slides={slides} />
       </div>
+      <NavBar />
+      <Card />
     </>
   );
 }
