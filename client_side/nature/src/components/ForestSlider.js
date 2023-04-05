@@ -12,10 +12,11 @@ const ForestSlider = ({ slides , onSlideChange }) => {
     width: "100%",
     height: "100%",
     borderRadius: "10px",
-    backgroundImage: "center",
     backgroundSize: "cover",
+    backgroundPosition: "center",
     backgroundImage: slides.length > 0 ? `url(${slides[currentIndex].url})` : "",
   };
+
 
   const leftArrowStyles = {
     position: "absolute",
@@ -27,6 +28,8 @@ const ForestSlider = ({ slides , onSlideChange }) => {
     zIndex: 1,
     cursor: "pointer",
   };
+
+
   const rightArrowStyles = {
     position: "absolute",
     top: "50%",
@@ -38,6 +41,7 @@ const ForestSlider = ({ slides , onSlideChange }) => {
     cursor: "pointer",
   };
 
+
   const goToPrev = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -45,7 +49,8 @@ const ForestSlider = ({ slides , onSlideChange }) => {
     onSlideChange(newIndex);
   };
 
-  const gotoNext = () => {
+  
+  const goToNext = () => {
     const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
@@ -55,13 +60,13 @@ const ForestSlider = ({ slides , onSlideChange }) => {
 
   return (
     <div style={slideStylesMain}>
-      <div style={leftArrowStyles} onClick={goToPrev}>
-        ⇦
+      <div onClick={goToPrev} style={leftArrowStyles}>
+        ❰
       </div>
-      <div style={rightArrowStyles} onClick={gotoNext}>
-        ⇨
+        <div onClick={goToNext} style={rightArrowStyles}>
+          ❱
       </div>
-      <div style={slideStyles}></div>
+          <div style={slideStyles}></div>
   
       </div>
 
