@@ -40,30 +40,30 @@ public class DataLoader implements ApplicationRunner {
         ForestList forests = new ForestList("Temperate Forests",new ArrayList<>(),amy);
         forestListRepository.save(forests);
 
-        Forest black = new Forest("Black Forest", "Germany", "Home to the Black Forest beetle, capercaillie and the elusive lynx. These elusive cats were hunted to near extinction in the region, but conservation efforts have led to their reintroduction in recent years. ",forests );
-        forestRepository.save(black);
+        Forest yellowStone = new Forest("Yellowstone","USA","a vast natural reserve, it is home to a wide variety of wildlife, including grizzly bears, wolves, bison, and elk. ", forests);
+        forestRepository.save(yellowStone);
 
-        Forest haguro = new Forest("Mt Haguro Forest", "Tsuruoka, JAPAN","Mat Eric Hart\n" +
+        Forest haguro = new Forest("Mt Haguro Forest", "JAPAN","Mat Eric Hart\n" +
                 "home to a centuries-old Shinto shrine and is known for its ancient cedar trees, some of which are over 1,000 years old. ",forests);
         forestRepository.save(haguro);
 
-        Forest plateau = new Forest("Plateau des Tailles", "Houffalize, BELGIUM", "Martin Dellicour\n" +
+        Forest plateau = new Forest("Plateau des Tailles", "BELGIUM", "Martin Dellicour\n" +
                 "features a variety of hiking trails and is known for its panoramic views of the surrounding landscape. ",forests);
         forestRepository.save(plateau);
 
-        Forest yellowStone = new Forest("Yellowstone","USA","a vast natural reserve, it is home to a wide variety of wildlife, including grizzly bears, wolves, bison, and elk. ", forests);
-        forestRepository.save(yellowStone);
+        Forest black = new Forest("Black Forest", "GERMANY", "Home to the Black Forest beetle, capercaillie and the elusive lynx. These elusive cats were hunted to near extinction in the region, but conservation efforts have led to their reintroduction in recent years. ",forests );
+        forestRepository.save(black);
 
 
         //Subtropical Forests Lists
         ForestList subtropicalForests = new ForestList("Subtropical Forests",new ArrayList<>(),amy);
         forestListRepository.save(subtropicalForests);
 
-        Forest gaio = new Forest("Mirante Gaio","Rio Grande do Sul, BRAZIL", "Felipe Giongo Krewer\n" +
+        Forest gaio = new Forest("Mirante Gaio","BRAZIL", "Felipe Giongo Krewer\n" +
                 "home to a variety of wildlife, including capuchin monkeys and toucans. ", subtropicalForests);
         forestRepository.save(gaio);
 
-        Forest laurel = new Forest("Laurel Forest", "Canary Islands, Spain", "A subtropical cloud forest on the islands of Tenerife, La Palma, and Gomera, known for its diverse flora and fauna. ",forests );
+        Forest laurel = new Forest("Laurel Forest", "SPAIN", "A subtropical cloud forest on the islands of Tenerife, La Palma, and Gomera, known for its diverse flora and fauna. ",forests );
         forestRepository.save(laurel);
 
 

@@ -21,10 +21,10 @@ const getImages = (id) => {
   switch (id) {
     case 1:
       return [
-        { url: 'http://localhost:3000/assets/img/forests/1/g_1.jpg', title: 'gaio 1' },
-        { url: 'http://localhost:3000/assets/img/forests/1/g_2.jpg', title: 'gaio 2' },
-        { url: 'http://localhost:3000/assets/img/forests/1/g_3.jpg', title: 'gaio 3' },
-        { url: 'http://localhost:3000/assets/img/forests/1/g_4.jpg', title: 'gaio 4' },
+        { url: 'http://localhost:3000/assets/img/forests/1/y_1.jpg', title: 'yellowstone 1' },
+        { url: 'http://localhost:3000/assets/img/forests/1/y_2.jpg', title: 'yellowstone 2' },
+        { url: 'http://localhost:3000/assets/img/forests/1/y_3.jpg', title: 'yellowstone 3' },
+        { url: 'http://localhost:3000/assets/img/forests/1/y_4.jpg', title: 'yellowstone 4' },
       ];
     case 2:
       return [
@@ -43,10 +43,11 @@ const getImages = (id) => {
       ];
     case 4:
       return [
-        { url: 'http://localhost:3000/assets/img/forests/4/y_1.jpg', title: 'yellowstone 1' },
-        { url: 'http://localhost:3000/assets/img/forests/4/y_2.jpg', title: 'yellowstone 2' },
-        { url: 'http://localhost:3000/assets/img/forests/4/y_3.jpg', title: 'yellowstone 3' },
-        { url: 'http://localhost:3000/assets/img/forests/4/y_4.jpg', title: 'yellowstone 4' },
+        { url: 'http://localhost:3000/assets/img/forests/4/g_1.jpg', title: 'gaio 1' },
+        { url: 'http://localhost:3000/assets/img/forests/4/g_2.jpg', title: 'gaio 2' },
+        { url: 'http://localhost:3000/assets/img/forests/4/g_3.jpg', title: 'gaio 3' },
+        { url: 'http://localhost:3000/assets/img/forests/4/g_4.jpg', title: 'gaio 4' },
+
       ];
     default:
       return [];
