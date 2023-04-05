@@ -1,11 +1,13 @@
+// AudioPlayer.js
 import { useState, useEffect } from "react";
 
 const AudioPlayer = ({ isPlaying, audioUrl }) => {
-  const [audio] = useState(new Audio(audioUrl));
+  const [audio] = useState(new Audio());
 
   useEffect(() => {
-    if (isPlaying) {
+    if (isPlaying && audioUrl) {
       audio.src = audioUrl;
+      audio.type = audioUrl.endsWith(".wav") ? "audio/wav" : "audio/mp3";
       audio.play();
     } else {
       audio.pause();
@@ -16,5 +18,3 @@ const AudioPlayer = ({ isPlaying, audioUrl }) => {
 };
 
 export default AudioPlayer;
-
-

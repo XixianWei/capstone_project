@@ -1,39 +1,39 @@
 import { useState } from "react";
 import AudioDots from "../components/AudioDots";
 import AudioPlayer from "../components/AudioPlayer";
-import forestData from "../components/ForestData";
+import Footer from "../components/Footer";
 import PlayButton from "../components/PlayButton";
 
 
-const MusicPlayerContainer = () => {
+const MusicPlayerContainer = ({ currentForestData, onSelectedForestIdChange }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentAudioUrl, setCurrentAudioUrl] = useState(
-    `${process.env.PUBLIC_URL}/asessts/sounds/gaio.wav`
+  const [selectedAudioUrl, setSelectedAudioUrl] = useState(
+    `${process.env.PUBLIC_URL}/assets/sounds/1.wav`
   );
+  const [selectedForestId, setSelectedForestId] = useState(null);
 
   const handleToggleMusic = (isMusicPlaying) => {
     setIsPlaying(isMusicPlaying);
   };
 
-  const handleDotClick = (audioUrl) => {
-    setCurrentAudioUrl(audioUrl);
+  const handleDotClick = (audioUrl, forestId) => {
+    console.log(currentForestData);
+    setSelectedAudioUrl(audioUrl);
     setIsPlaying(true);
+    setSelectedForestId(forestId);
+    onSelectedForestIdChange(forestId);
   };
+
+ 
 
   return (
     <>
-      <AudioPlayer isPlaying={isPlaying} audioUrl={currentAudioUrl}/>
+      <AudioPlayer isPlaying={isPlaying} audioUrl={selectedAudioUrl} />
       <PlayButton isPlaying={isPlaying} onClick={handleToggleMusic} />
-      <AudioDots audioUrls={[
-        `${process.env.PUBLIC_URL}/asessts/sounds/gaio.wav`,
-        `${process.env.PUBLIC_URL}/asessts/sounds/haguro.mp3`,
-        `${process.env.PUBLIC_URL}/asessts/sounds/plateau.mp3`,
-        `${process.env.PUBLIC_URL}/asessts/sounds/yellowStone.wav`
-      ]} onDotClick={handleDotClick} />
+      <AudioDots currentForestData={currentForestData} onDotClick={handleDotClick} />
+      <Footer currentForestData={currentForestData} selectedForestId ={selectedForestId}/>
     </>
   );
 };
 
 export default MusicPlayerContainer;
-
-

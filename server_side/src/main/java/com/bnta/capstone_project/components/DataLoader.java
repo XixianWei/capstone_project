@@ -35,24 +35,45 @@ public class DataLoader implements ApplicationRunner {
         User amy = new User("Amy", "amy@gmail.com", 10L,new ArrayList<>());
         userRepository.save(amy);
 
+
         //Lists
-        ForestList forests = new ForestList("forests",new ArrayList<>(),amy);
+        ForestList forests = new ForestList("Temperate Forests",new ArrayList<>(),amy);
         forestListRepository.save(forests);
 
-        //Forest
-        Forest yellowStone = new Forest("Yellow Stone","USA","add information", forests);
-        forestRepository.save(yellowStone);
-
-        Forest plateau = new Forest("Plateau des Tailles", "Houffalize, BELGIUM", "Martin Dellicour\n" +
-                "    June 2019 - Early evening on the edge of a wetland in middle of the forest. A wild valley populated by beavers in the Belgian Ardennes...",forests);
-        forestRepository.save(plateau);
+        Forest black = new Forest("Black Forest", "Germany", "Home to the Black Forest beetle, capercaillie and the elusive lynx. These elusive cats were hunted to near extinction in the region, but conservation efforts have led to their reintroduction in recent years. ",forests );
+        forestRepository.save(black);
 
         Forest haguro = new Forest("Mt Haguro Forest", "Tsuruoka, JAPAN","Mat Eric Hart\n" +
-                "        Summer. 17th August 2019. Recording of Mt. Haguro forest ambience standing in front of the ancient Grandpa cedar tree known as Jijisugi (爺杉). The flow of the Haraigawa river can be heard amongst the evening chorus of the various forest wildlife including the evening cicada known as higurashi (茅蜩) (tanna japonensis), and the large brown cicada known as abura-zemi (油蝉) (graptopsaltria nigrofuscata).",forests );
+                "home to a centuries-old Shinto shrine and is known for its ancient cedar trees, some of which are over 1,000 years old. ",forests);
         forestRepository.save(haguro);
 
-        Forest gaio = new Forest("Mirante Gaio","Mirante Gaio, Mato Perso, Rio Grande do Sul, BRAZIL", "Felipe Giongo Krewer\n" +
-                "        The recording was made at 10:30 AM, this place is a belvedere called \"Mirante Gaio\", in this place we can see the river Rio das Antas and his turns.\n", forests);
+        Forest plateau = new Forest("Plateau des Tailles", "Houffalize, BELGIUM", "Martin Dellicour\n" +
+                "features a variety of hiking trails and is known for its panoramic views of the surrounding landscape. ",forests);
+        forestRepository.save(plateau);
+
+        Forest yellowStone = new Forest("Yellowstone","USA","a vast natural reserve, it is home to a wide variety of wildlife, including grizzly bears, wolves, bison, and elk. ", forests);
+        forestRepository.save(yellowStone);
+
+
+        //Subtropical Forests Lists
+        ForestList subtropicalForests = new ForestList("Subtropical Forests",new ArrayList<>(),amy);
+        forestListRepository.save(subtropicalForests);
+
+        Forest gaio = new Forest("Mirante Gaio","Rio Grande do Sul, BRAZIL", "Felipe Giongo Krewer\n" +
+                "home to a variety of wildlife, including capuchin monkeys and toucans. ", subtropicalForests);
+        forestRepository.save(gaio);
+
+        Forest laurel = new Forest("Laurel Forest", "Canary Islands, Spain", "A subtropical cloud forest on the islands of Tenerife, La Palma, and Gomera, known for its diverse flora and fauna. ",forests );
+        forestRepository.save(laurel);
+
+
+        //Tropical Forests Lists
+        ForestList tropicalForests = new ForestList("Tropical Forests",new ArrayList<>(),amy);
+        forestListRepository.save(tropicalForests);
+
+        //Boreal Forests Lists
+        ForestList borealForests = new ForestList("Boreal Forests",new ArrayList<>(),amy);
+        forestListRepository.save(borealForests);
 
     }
 

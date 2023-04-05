@@ -1,83 +1,72 @@
-const forestData = [
-  {
-    id: 'gaio',
-    images: [
-      {url: 'http://localhost:3000/asessts/img/forests/gaio/g_1.jpg', title:'gaio 1'},
-      {url: 'http://localhost:3000/asessts/img/forests/gaio/g_2.jpg', title:'gaio 2'},
-    ],
-    sounds: [`${process.env.PUBLIC_URL}/asessts/sounds/gaio.wav`],
-  },
-  {
-    id: 'haguro',
-    images: [
-      { url: 'http://localhost:3000/asessts/img/forests/gaio/g_1.jpg', title: 'gaio 1' },
-      { url: 'http://localhost:3000/asessts/img/forests/gaio/g_2.jpg', title: 'gaio 2' },
-    ],
-    sounds:[`${process.env.PUBLIC_URL}/asessts/sounds/haguro.mp3`],
-  },
-  {
-    id: 'plateau',
-    images: [
-      {url: 'http://localhost:3000/asessts/img/forests/plateau/p_1.jpg', title:'plateau 1'},
-      {url: 'http://localhost:3000/asessts/img/forests/plateau/p_2.jpg', title:'plateau 2'},
-    ],
-    sounds:[`${process.env.PUBLIC_URL}/asessts/sounds/plateau.mp3`],
-  },
-  {
-    id: 'yellowStone',
-    images: [
-      {url: 'http://localhost:3000/asessts/img/forests/yellowStone/ys_1.jpg', title:'yellow stone 1'},
-      {url: 'http://localhost:3000/asessts/img/forests/yellowStone/ys_2.jpg', title:'yellow stone 2'},
-      {url: 'http://localhost:3000/asessts/img/forests/yellowStone/ys_3.jpg', title:'yellow stone 3'},
-    ],
-    sounds:[`${process.env.PUBLIC_URL}/asessts/sounds/yellowStone.wav`],
-  },
+import { getAllForests } from "../Api";
 
-  
-];
+const getForestDataWithMedia = async () => {
+  try {
+    const forests = await getAllForests();
+    return forests.map((forest) => {
+      const images = getImages(forest.id);
+      const sounds = getSounds(forest.id);
+      return {
+        ...forest,
+        images,
+        sounds,
+      };
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-export default forestData;
+const getImages = (id) => {
+  switch (id) {
+    case 1:
+      return [
+        { url: 'http://localhost:3000/assets/img/forests/1/g_1.jpg', title: 'gaio 1' },
+        { url: 'http://localhost:3000/assets/img/forests/1/g_2.jpg', title: 'gaio 2' },
+        { url: 'http://localhost:3000/assets/img/forests/1/g_3.jpg', title: 'gaio 3' },
+        { url: 'http://localhost:3000/assets/img/forests/1/g_4.jpg', title: 'gaio 4' },
+      ];
+    case 2:
+      return [
+        { url: 'http://localhost:3000/assets/img/forests/2/h_1.jpg', title: 'haguro 1' },
+        { url: 'http://localhost:3000/assets/img/forests/2/h_2.jpg', title: 'haguro 2' },
+        { url: 'http://localhost:3000/assets/img/forests/2/h_3.jpg', title: 'haguro 3' },
+        { url: 'http://localhost:3000/assets/img/forests/2/h_4.jpg', title: 'haguro 4' },
+      ];
+    case 3:
+      return [
+        { url: 'http://localhost:3000/assets/img/forests/3/p_1.jpg', title: 'plateau 1' },
+        { url: 'http://localhost:3000/assets/img/forests/3/p_2.jpg', title: 'plateau 2' },
+        { url: 'http://localhost:3000/assets/img/forests/3/p_3.jpg', title: 'plateau 3' },
+        { url: 'http://localhost:3000/assets/img/forests/3/p_4.jpg', title: 'plateau 4' },
+        
+      ];
+    case 4:
+      return [
+        { url: 'http://localhost:3000/assets/img/forests/4/y_1.jpg', title: 'yellowstone 1' },
+        { url: 'http://localhost:3000/assets/img/forests/4/y_2.jpg', title: 'yellowstone 2' },
+        { url: 'http://localhost:3000/assets/img/forests/4/y_3.jpg', title: 'yellowstone 3' },
+        { url: 'http://localhost:3000/assets/img/forests/4/y_4.jpg', title: 'yellowstone 4' },
+      ];
+    default:
+      return [];
+  }
+};
+
+const getSounds = (id) => {
+  switch (id) {
+    case 1:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/1.wav`];
+    case 2:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/2.mp3`];
+    case 3:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/3.mp3`];
+    case 4:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/4.wav`];
+    default:
+      return [];
+  }
+};
 
 
-// const forestData = {
-//     gaio: {
-//       images: [
-//         {url: 'http://localhost:3000/asessts/img/forests/gaio/g_1.jpg', title:'gaio 1'},
-//         {url: 'http://localhost:3000/asessts/img/forests/gaio/g_2.jpg', title:'gaio 2'},
-//       ],
-//       sounds: [
-//         `${process.env.PUBLIC_URL}/asessts/sounds/gaio.wav`,
-//       ]
-//     },
-//     haguro: {
-//       images: [
-//         {url: 'http://localhost:3000/asessts/img/forests/haguro/h_1.jpg', title:'haguro 1'},
-//         {url: 'http://localhost:3000/asessts/img/forests/haguro/h_2.jpg', title:'haguro 2'},
-//       ],
-//       sounds: [
-//         `${process.env.PUBLIC_URL}/asessts/sounds/haguro.mp3`,
-//       ]
-//     },
-//     plateau: {
-//       images: [
-//         {url: 'http://localhost:3000/asessts/img/forests/plateau/p_1.jpg', title:'plateau 1'},
-//         {url: 'http://localhost:3000/asessts/img/forests/plateau/p_2.jpg', title:'plateau 2'},
-//       ],
-//       sounds: [
-//         `${process.env.PUBLIC_URL}/asessts/sounds/plateau.mp3`,
-//       ]
-//     },
-//     yellowStone: {
-//       images: [
-//         {url: 'http://localhost:3000/asessts/img/forests/yellowStone/ys_1.jpg', title:'yellow stone 1'},
-//         {url: 'http://localhost:3000/asessts/img/forests/yellowStone/ys_2.jpg', title:'yellow stone 2'},
-//         {url: 'http://localhost:3000/asessts/img/forests/yellowStone/ys_3.jpg', title:'yellow stone 3'},
-//       ],
-//       sounds: [
-//         `${process.env.PUBLIC_URL}/asessts/sounds/yellowStone.wav`,
-//       ]
-//     }
-//   };
-
-//   export default forestData;
-  
+export default getForestDataWithMedia;
