@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Card.css';
 
-
 const Card = ({ currentForestData, selectedForestId }) => {
-  const selectedForest = currentForestData.find((forest) => forest.id === selectedForestId) || currentForestData.find((forest) => forest.id === 1);
-
+  const selectedForest = currentForestData.length > 0 ? (currentForestData.find((forest) => forest.id === selectedForestId) || currentForestData.find((forest) => forest.id === 1)) : null;
 
   const [cards] = useState([
     {
-      title: selectedForest ? selectedForest.name : 'Forest Name',
+      title: selectedForest ? selectedForest.name : 'Forest Name | ' ,
       text: selectedForest ? selectedForest.description : 'Forest description',
     },
     {
@@ -16,7 +14,6 @@ const Card = ({ currentForestData, selectedForestId }) => {
       text: 'Join us in preserving natures beauty. Sponsor our forest in Yellowstone National Park today and help protect our planet for future generations.',
     },
   ]);
-
 
   return (
     <section>
@@ -33,6 +30,6 @@ const Card = ({ currentForestData, selectedForestId }) => {
       </div>
     </section>
   );
-}
+};
 
 export default Card;

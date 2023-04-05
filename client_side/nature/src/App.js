@@ -33,21 +33,22 @@ useEffect(() => {
     setCurrentSlideUrl(currentForestData.find((forest) => forest.id === selectedForestId).images[0].url);
   }
 }, [selectedForestId, currentForestData]);
-  useEffect(() => {
-    document.body.style.backgroundImage = `url(${currentSlideUrl})`;
-  }, [currentSlideUrl]);
 
+
+
+  
 
   return (
+    <div className="App">
     <>
-      <MusicPlayer currentForestData={currentForestData} onSelectedForestIdChange={setSelectedForestId}/>
       <ForestContainer
         slides={currentForestData.find((forest) => forest.id === selectedForestId)?.images || []}
         onSlideChange={handleSlideChange}
       />
+     <MusicPlayer currentForestData={currentForestData} onSelectedForestIdChange={setSelectedForestId}/>
       <NavBar />
-      <Card />
     </>
+    </div>
   );
 }
 export default App;
