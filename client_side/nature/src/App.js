@@ -4,7 +4,7 @@ import MusicPlayer from './containers/MusicPlayerContainer';
 import ForestContainer from './containers/ForestContainer';
 import { useState , useEffect } from "react";
 import getForestDataWithMedia from './components/ForestData';
-import Card from './components/Card';
+
 
 function App() {
   const [currentForestData, setCurrentForestData] = useState([]);
