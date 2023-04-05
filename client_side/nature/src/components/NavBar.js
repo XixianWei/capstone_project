@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MenuIcon from '@mui/icons-material/Menu';
 
 
-function NavBar() {
+function NavBar({onAddForestButtonClick}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -21,7 +21,7 @@ function NavBar() {
           </ul>
         
           
-          <button className="add_forest">Add a Forest</button>
+          <button className="add_forest" onClick={onAddForestButtonClick}>Add a Forest</button>
 
           {isMenuOpen && (
             <div className="burger_menu_resp">
@@ -30,7 +30,7 @@ function NavBar() {
                 <li><a href="#" alt="Ocean Header Link"> Ocean</a></li>
                 <li><a href="#" alt="Rainforest Header Link"> Rainforest</a></li>
                 <li><a href="#" alt="Caves Header Link"> Caves</a></li>
-                <li><button className="add_forest">Add a Forest</button></li>
+                <li><button className="add_forest" onClick={onAddForestButtonClick}>Add a Forest</button></li>
               </ul>
             </div>
           )}

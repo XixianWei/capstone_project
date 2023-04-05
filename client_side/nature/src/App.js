@@ -4,6 +4,7 @@ import MusicPlayer from './containers/MusicPlayerContainer';
 import ForestContainer from './containers/ForestContainer';
 import { useState , useEffect } from "react";
 import getForestDataWithMedia from './components/ForestData';
+import AddForestModal from './components/AddForestModal.js';
 
 
 function App() {
@@ -34,20 +35,22 @@ useEffect(() => {
   }
 }, [selectedForestId, currentForestData]);
 
+const [show, setShow] = useState(false);
 
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
 
   
 
   return (
     <div className="App">
-    <>
       <ForestContainer
         slides={currentForestData.find((forest) => forest.id === selectedForestId)?.images || []}
         onSlideChange={handleSlideChange}
       />
      <MusicPlayer currentForestData={currentForestData} onSelectedForestIdChange={setSelectedForestId}/>
-      <NavBar />
-    </>
+      <NavBar onAddForestButtonClick={handleShow}/>
+      <AddForestModal show={show} setShow={setShow} handleClose={handleClose} handleShow={handleShow}/>
     </div>
   );
 }

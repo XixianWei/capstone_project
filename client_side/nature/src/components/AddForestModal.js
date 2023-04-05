@@ -1,24 +1,15 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import {Button} from 'react-bootstrap';
+import {Modal} from 'react-bootstrap';
 
-function AddForest() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+function AddForestModal({show, setShow, handleClose, handleShow}) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
-      </Button>
-
       <Modal
         show={show}
         onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
+        animation={false}
       >
         <Modal.Header closeButton>
           <Modal.Title>Add a forest</Modal.Title>
@@ -26,6 +17,7 @@ function AddForest() {
         <Modal.Body>
           
           <p>Forest Name:</p>
+          
           <p>Location:</p>
           <p>Catergory:</p>
           <p>Audio:</p>
@@ -40,11 +32,10 @@ function AddForest() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
         </Modal.Footer>
       </Modal>
     </>
   );
 }
 
-render(<AddForest />);
+export default AddForestModal;
