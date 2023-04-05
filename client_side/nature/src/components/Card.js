@@ -1,36 +1,38 @@
-import React, { useState } from 'react'
-import './Card.css'
+import React, { useState, useEffect } from 'react';
+import './Card.css';
 
-function Card() {
-  const [cards] = useState ([
+
+const Card = ({ currentForestData, selectedForestId }) => {
+  const selectedForest = currentForestData.find((forest) => forest.id === selectedForestId) || currentForestData.find((forest) => forest.id === 1);
+
+
+  const [cards] = useState([
     {
-      title: 'Yellowstone National Park',
-      text: 'Yellowstone National Park is an American national park located in the western United States, largely in the northwest corner of Wyoming and extending into Montana and Idaho.'
-      // button : 'Read More'
+      title: selectedForest ? selectedForest.name : 'Forest Name',
+      text: selectedForest ? selectedForest.description : 'Forest description',
     },
     {
       title: 'Sponsor a Forest',
-      text: 'Join us in preserving natures beauty. Sponsor our forest in Yellowstone National Park today and help protect our planet for future generations.'
+      text: 'Join us in preserving natures beauty. Sponsor our forest in Yellowstone National Park today and help protect our planet for future generations.',
     },
-  ])
-  return (
+  ]);
 
+
+  return (
     <section>
       <div className='card-container'>
         <div className='cards'>
-          {cards.map((card, i)=>(
+          {cards.map((card, i) => (
             <div key={i} className='card'>
-            <h3>{card.title}</h3>
-            <p>{card.text}</p>
-            <button>Read More</button>
-            {/* <button>{card.button}</button> */}
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+              <button>Read More</button>
             </div>
-            ))}
+          ))}
         </div>
       </div>
     </section>
-  
-  )
+  );
 }
 
 export default Card;

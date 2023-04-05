@@ -1,7 +1,7 @@
 import { useState } from "react";
 import AudioDots from "../components/AudioDots";
 import AudioPlayer from "../components/AudioPlayer";
-import Footer from "../components/Footer";
+import Card from "../components/Card";
 import PlayButton from "../components/PlayButton";
 
 
@@ -31,7 +31,7 @@ const MusicPlayerContainer = ({ currentForestData, onSelectedForestIdChange }) =
       <AudioPlayer isPlaying={isPlaying} audioUrl={selectedAudioUrl} />
       <PlayButton isPlaying={isPlaying} onClick={handleToggleMusic} />
       <AudioDots currentForestData={currentForestData} onDotClick={handleDotClick} />
-      <Footer currentForestData={currentForestData} selectedForestId ={selectedForestId}/>
+      <Card currentForestData={currentForestData} selectedForestId ={selectedForestId}/>
     </>
   );
 };
