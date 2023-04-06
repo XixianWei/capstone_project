@@ -45,11 +45,21 @@ const getImages = (id) => {
       ];
     case 4:
       return [
-        { url: 'http://localhost:3000/assets/img/forests/4/g_1.jpg', title: 'gaio 1' },
-        { url: 'http://localhost:3000/assets/img/forests/4/g_2.jpg', title: 'gaio 2' },
-        { url: 'http://localhost:3000/assets/img/forests/4/g_3.jpg', title: 'gaio 3' },
-        { url: 'http://localhost:3000/assets/img/forests/4/g_4.jpg', title: 'gaio 4' },
+        { url: 'http://localhost:3000/assets/img/forests/4/b_1.jpg', title: 'black 1' },
+        { url: 'http://localhost:3000/assets/img/forests/4/b_2.jpg', title: 'black 2' },
+        { url: 'http://localhost:3000/assets/img/forests/4/b_3.jpg', title: 'black 3' },
+        { url: 'http://localhost:3000/assets/img/forests/4/b_4.jpg', title: 'black 4' },
 
+      ];
+      case 5:
+      return [
+        { url: 'http://localhost:3000/assets/img/forests/5/g_1.jpg', title: 'gaio 1' },
+        { url: 'http://localhost:3000/assets/img/forests/5/g_2.jpg', title: 'gaio 2' },
+      ];
+      case 6:
+      return [
+        { url: 'http://localhost:3000/assets/img/forests/6/l_1.jpg', title: 'gaio 1' },
+        { url: 'http://localhost:3000/assets/img/forests/6/l_2.jpg', title: 'gaio 2' },
       ];
     default:
       return [];
@@ -66,6 +76,10 @@ const getSounds = (id) => {
       return [`${process.env.PUBLIC_URL}/assets/sounds/3.mp3`];
     case 4:
       return [`${process.env.PUBLIC_URL}/assets/sounds/4.wav`];
+    case 5:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/5.mp3`];
+    case 6:
+      return [`${process.env.PUBLIC_URL}/assets/sounds/6.mp3`];
     default:
       return [];
   }
