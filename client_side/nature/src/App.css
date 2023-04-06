@@ -9,12 +9,23 @@
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   text-decoration: none;
   color: black;
-  
 }
 
 *:hover {
   color: #52B788;
   cursor: pointer;
+}
+
+a{
+  color: white;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #52B788;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  text-decoration: none;
 }
 
 @media(min-width: 412px){
@@ -55,6 +66,7 @@ header {
   gap: 3rem;
   list-style: none;
   margin-left: 3rem;
+  margin-top: 1rem;
 }
 
 a:hover{
@@ -179,10 +191,19 @@ a:hover{
 .audio-dots {
   display: flex; /* Changed from 'none' to 'flex' */
   position: absolute;
-  bottom: 50%;
-  left: 50%;
+  flex-direction: column;
+  bottom: 40%;
+  left: 7.5%;
   transform: translateX(-50%);
-  gap: 8px;
+  gap: .5rem;
+}
+
+.audio-dots span{
+  color: white;
+}
+
+.audio-dots span:hover{
+  color: #52B788;
 }
 
 body, html {
