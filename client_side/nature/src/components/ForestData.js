@@ -6,10 +6,12 @@ const getForestDataWithMedia = async () => {
     return forests.map((forest) => {
       const images = getImages(forest.id);
       const sounds = getSounds(forest.id);
+      const wikipediaUrl = getWikipediaUrl(forest.id);
       return {
         ...forest,
         images,
         sounds,
+        wikipediaUrl,
       };
     });
   } catch (error) {
@@ -66,6 +68,21 @@ const getSounds = (id) => {
       return [`${process.env.PUBLIC_URL}/assets/sounds/4.wav`];
     default:
       return [];
+  }
+};
+
+const getWikipediaUrl = (id) => {
+  switch (id) {
+    case 1:
+      return 'https://en.wikipedia.org/wiki/Yellowstone_National_Park';
+    case 2:
+      return 'https://en.wikipedia.org/wiki/Mount_Haguro';
+    case 3:
+      return 'https://en.wikipedia.org/wiki/Colorado_Plateau';
+    case 4:
+      return 'https://en.wikipedia.org/wiki/Gaio_Forest';
+    default:
+      return '';
   }
 };
 
