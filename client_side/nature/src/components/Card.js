@@ -1,5 +1,6 @@
-import React from 'react';
+import { useState } from 'react';
 import './Card.css';
+import SponsorForestModal from './SponsorForestModal';
 
 const Card = ({ currentForestData, selectedForestId }) => {
   const selectedForest = currentForestData.length > 0
@@ -12,9 +13,13 @@ const Card = ({ currentForestData, selectedForestId }) => {
       }
     };
 
+  const [showSponsorModal, setShowSponsorModal] = useState(false);
+  const handleSponsorModalClose = () => setShowSponsorModal(false);
+  const handleSponsorModalShow = () => setShowSponsorModal(true);
+
 
   return (
-    <section>
+   <section>
       <div className='card-container'>
         <div className='cards'>
           <div className='card'>
@@ -25,11 +30,18 @@ const Card = ({ currentForestData, selectedForestId }) => {
           <div className='card'>
             <h3>Sponsor a Forest</h3>
             <p>Join us in preserving natures beauty. Sponsor our forest in Yellowstone National Park today and help protect our planet for future generations.</p>
-            <button>Read More</button>
+            <button onClick={handleSponsorModalShow}>Read More</button>
           </div>
         </div>
       </div>
+      <SponsorForestModal
+    show={showSponsorModal}
+    setShow={setShowSponsorModal}
+    handleClose={handleSponsorModalClose}
+    handleShow={handleSponsorModalShow}
+  />
     </section>
+    
   );
 };
 

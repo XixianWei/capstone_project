@@ -1,6 +1,6 @@
 import '../App.css';
 import React, { useState } from 'react';
-import {Button, Modal, Form, Col, Row} from 'react-bootstrap';
+import {Button, Modal, Form } from 'react-bootstrap';
 
 
 function SponsorForestModal({ show, setShow, handleClose, handleShow }) {
@@ -95,4 +95,4 @@ function SponsorForestModal({ show, setShow, handleClose, handleShow }) {
   );
 }
 
-export default SponsorForestModal
+export default SponsorForestModal;
