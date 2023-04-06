@@ -1,21 +1,16 @@
-/* *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
 .cards{
-  /* background-color: white; */
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
-  /* margin-top: -300px; */
   position: absolute;
-  /* left: 50px;
-  top: 100px; */
   right: 2rem;
   bottom: 1rem;
   z-index: 100;
+}
+
+.card-container{
+  max-width: 1300px;
+  width: 100%;
 }
 
 .card{
@@ -35,7 +30,6 @@
 .card:hover{
   border: 1px solid white;
   background: rgba(0, 0, 0, 0.5);
-  
 }
 
 .card h3{
@@ -52,12 +46,7 @@
   color: white;
 }
 
-.card-container{
-  max-width: 1300px;
-  /* overflow: hidden; */
-  width: 100%;
-  /* margin: auto; */
-}
+
 
 section{
   min-height: 100vh;

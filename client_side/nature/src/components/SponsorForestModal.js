@@ -13,72 +13,64 @@ function SponsorForestModal({ show, setShow, handleClose, handleShow }) {
         animation={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Add a forest</Modal.Title>
+          <Modal.Title>Sponsor a Forest</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
 
-          <Form.Group className="mb-1">
-            <Form.Label>Forest Name:</Form.Label>
-            <Form.Control type="text" placeholder="Enter forest name" />
-          </Form.Group>
+        <Form>
 
-          <Form.Group className="mb-1">
-            <Form.Label>Location:</Form.Label>
-            <Form.Control type="text" placeholder="Enter Location" />
-          </Form.Group>
-
-          <Form.Group controlId="audio">
-            <Form.Label>Audio:</Form.Label>
-            <Form.Control type="file" accept="audio/*" />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Image:</Form.Label>
+        <Form.Group className="formDonationAmount">
+            <Form.Label>Donation Amount</Form.Label>
             <Form.Control
-              type="file"
-              accept="image/*"
-              onChange={(event) => {
-                const file = event.target.files[0];
-                // Do something with the file, like upload it to a server
-              }}
+              // type="text"
+              // value={cardNumber}
+              // onChange={(event) => setCardNumber(event.target.value)}
+              placeholder="Enter Amount"
             />
           </Form.Group>
 
-          <Form.Group className="mb-3">
-            <Form.Label>Select Category:</Form.Label>
-            <Form.Select aria-label="Select Category">
-              <option>Select a category</option>
-              <option value="Temperate">Temperate</option>
-              <option value="Subtropical">Subtropical</option>
-              <option value="Tropical">Tropical</option>
-              <option value="Boreal">Boreal</option>
-            </Form.Select>
+          <Form.Group className="formCardNumber">
+            <Form.Label>Card Number</Form.Label>
+            <Form.Control
+              // type="text"
+              // value={cardNumber}
+              // onChange={(event) => setCardNumber(event.target.value)}
+              placeholder="Enter card number"
+            />
           </Form.Group>
 
-          <Form.Group className="mb-1">
-            <Form.Label>A brief description:</Form.Label>
-            <Form.Control as="textarea" rows={3} placeholder="a brief description"/>
+          <Form.Group className="formCardHolder">
+            <Form.Label>Cardholder Name</Form.Label>
+            <Form.Control
+              // type="text"
+              // value={cardHolder}
+              // onChange={(event) => setCardHolder(event.target.value)}
+              placeholder="Enter cardholder name"
+            />
           </Form.Group>
 
-          <Form.Group className="mb-1">
-            <Form.Label>First Name:</Form.Label>
-            <Form.Control type="text" placeholder="Enter first name" />
+          <Form.Group Classname="formExpirationDate">
+            <Form.Label>Expiration Date</Form.Label>
+            <Form.Control
+              // type="text"
+              // value={expirationDate}
+              // onChange={(event) => setExpirationDate(event.target.value)}
+              placeholder="MM/YY"
+            />
           </Form.Group>
 
-          <Form.Group className="mb-1">
-            <Form.Label>Last Name:</Form.Label>
-            <Form.Control type="text" placeholder="Enter last name" />
+          <Form.Group className="formCvv">
+            <Form.Label>CVV</Form.Label>
+            <Form.Control
+              // type="text"
+              // value={cvv}
+              // onChange={(event) => setCvv(event.target.value)}
+              placeholder="Enter CVV"
+            />
           </Form.Group>
-
-          <Form.Group className="mb-1" controlId="formBasicEmail">
-            <Form.Label>Email address:</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
-
+        </Form>
+        
         </Modal.Body>
 
         <Modal.Footer>

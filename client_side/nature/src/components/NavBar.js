@@ -20,7 +20,6 @@ function NavBar({onAddForestButtonClick}) {
             <li><a href="#" alt="Boreal Header Link"> Boreal</a></li>
           </ul>
         
-          
           <button className="add_forest" onClick={onAddForestButtonClick}>Add a Forest</button>
 
           {isMenuOpen && (
