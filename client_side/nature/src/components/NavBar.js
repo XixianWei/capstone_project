@@ -15,9 +15,9 @@ function NavBar({onAddForestButtonClick}) {
 
           <ul className="links">
             <li><a href="#" alt="Forest Header Link"> Temperate</a></li>
-            <li><a href="#" alt="Ocean Header Link"> Subtropical</a></li>
-            <li><a href="#" alt="Rainforest Header Link"> Tropical</a></li>
-            <li><a href="#" alt="Caves Header Link"> Boreal</a></li>
+            <li><a href="#" alt="Subtropical Header Link"> Subtropical</a></li>
+            <li><a href="#" alt="Tropical Header Link"> Tropical</a></li>
+            <li><a href="#" alt="Boreal Header Link"> Boreal</a></li>
           </ul>
         
           
@@ -26,10 +26,10 @@ function NavBar({onAddForestButtonClick}) {
           {isMenuOpen && (
             <div className="burger_menu_resp">
               <ul>
-                <li><a href="#" alt="Forest Header Link"> Forest</a></li>
-                <li><a href="#" alt="Ocean Header Link"> Ocean</a></li>
-                <li><a href="#" alt="Rainforest Header Link"> Rainforest</a></li>
-                <li><a href="#" alt="Caves Header Link"> Caves</a></li>
+              <li><a href="#" alt="Forest Header Link"> Temperate</a></li>
+              <li><a href="#" alt="Subtropical Header Link"> Subtropical</a></li>
+              <li><a href="#" alt="Tropical Header Link"> Tropical</a></li>
+              <li><a href="#" alt="Boreal Header Link"> Boreal</a></li>
                 <li><button className="add_forest" onClick={onAddForestButtonClick}>Add a Forest</button></li>
               </ul>
             </div>
