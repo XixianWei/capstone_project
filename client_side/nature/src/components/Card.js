@@ -6,6 +6,12 @@ const Card = ({ currentForestData, selectedForestId }) => {
     ? (currentForestData.find((forest) => forest.id === selectedForestId) || currentForestData.find((forest) => forest.id === 1))
     : null;
 
+  const openWikipediaLink = () => {
+      if (selectedForest && selectedForest.wikipediaUrl) {
+        window.open(selectedForest.wikipediaUrl, '_blank');
+      }
+    };
+
 
   return (
     <section>
@@ -14,7 +20,7 @@ const Card = ({ currentForestData, selectedForestId }) => {
           <div className='card'>
           <h3>{selectedForest ? `${selectedForest.name} | ${selectedForest.location}` : 'Forest Name | Location'}</h3>
             <p>{selectedForest ? selectedForest.information : 'Forest description'}</p>
-            <button>Read More</button>
+            <button onClick={openWikipediaLink}>Read More</button>
           </div>
           <div className='card'>
             <h3>Sponsor a Forest</h3>
